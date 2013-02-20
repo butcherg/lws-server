@@ -341,8 +341,8 @@ callback_lws_mirror(struct libwebsocket_context *context,
 		char deletemsg[50];
 		sprintf(deletemsg, "{\"delete\":\"%s\"}",pss->name); 
 		send_msg(wsi, pss, deletemsg, strlen(deletemsg));
-		fprintf(stderr, "Connection closed, %d connections remain.\n", number_connections);;
 		number_connections--;
+		fprintf(stderr, "Connection closed, %d connections remain.\n", number_connections);
 		return -1;
 		break;
 
